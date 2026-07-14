@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+{% set defaultCategory = "notes" %}
+{% set relatedCollection = collections.writing %}
+{% set detailAuthorLabel = site.author %}
+{% set showPostToc = true %}
+{% set showAuthorByPrefix = false %}
+{% set writingDateFormat = "yyyy년 M월 d일" %}
+{% include "partials/writing-detail-core.njk" %}

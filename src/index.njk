@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: 홈
+description: "Underground Novel 최신 글"
+---
+{% set homePostLimit = 6 %}
+{% set writingPosts = collections.writing %}
+<section class="page-hero">
+  <h1>최신 글</h1>
+</section>
+
+<section class="layout-two">
+  <div class="feed">
+    {% set posts = writingPosts %}
+    {% set defaultCategory = "notes" %}
+    {% set limit = homePostLimit %}
+    {% set emptyMessage = "아직 글이 없습니다." %}
+    {% set listClass = "post-list archive-list writing-feed-list" %}
+    {% set itemClass = "writing-feed-item" %}
+    {% set showExcerpt = true %}
+    {% include "partials/writing-feed-cards.njk" %}
+    {% if writingPosts.length > homePostLimit %}
+    <div class="section-more-row">
+      <a class="section-more-link" href="{{ '/posts/' | url }}" aria-label="글 더보기">더보기</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-categories">
+      <div class="sidebar-title">카테고리</div>
+      <ul class="category-tree">
+        <li>
+          <a href="{{ '/posts/' | url }}">전체 글</a>
+          <span class="count">({{ writingPosts | length }})</span>
+        </li>
+        {% for cat in collections.categoryList %}
+          <li class="sub">
+            <a href="{{ ('/categories/' + cat.key + '/') | url }}">{{ cat.name }}</a>
+            <span class="count">({{ cat.count }})</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </aside>
+</section>

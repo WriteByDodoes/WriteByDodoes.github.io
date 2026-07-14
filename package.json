@@ -1,0 +1,15 @@
+{
+  "name": "writebydodoes-blog",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Underground Novel - 두더즈의 소설과 메모를 쌓아가는 공간.",
+  "scripts": {
+    "dev": "eleventy --serve --watch",
+    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "luxon": "^3.4.4"
+  }
+}
