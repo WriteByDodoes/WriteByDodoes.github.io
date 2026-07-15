@@ -1,5 +1,5 @@
 ---
-layout: layouts/dodoes-writing.njk
+layout: layouts/writing.njk
 title: "세상은 누가 책임지는가?"
 date: 2026-07-16
 category: philosophy
