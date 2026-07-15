@@ -1755,9 +1755,19 @@ canvas {
   height: var(--dodoes-header-height);
   background: var(--color-panel-highlight);
   border-bottom: 0;
-  box-shadow:
-    0 1px 0 color-mix(in srgb, var(--color-panel-border) 82%, transparent),
-    0 8px 20px rgba(47, 43, 38, 0.045);
+}
+
+.theme-dodoes .site-header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--space-5));
+  max-width: calc(var(--container-max) - 2 * var(--space-5));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-panel-border) 82%, transparent);
+  box-shadow: 0 8px 20px rgba(47, 43, 38, 0.045);
 }
 
 .theme-dodoes .header-inner {
