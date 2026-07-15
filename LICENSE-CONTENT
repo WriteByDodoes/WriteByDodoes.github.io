@@ -1,0 +1,29 @@
+Content License (CC BY-NC-SA 4.0)
+
+Unless otherwise noted, the writing, images, and other creative content in
+this repository are licensed under the Creative Commons Attribution-
+NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+
+You are free to share and adapt the content for non-commercial purposes, as
+long as you give appropriate credit and distribute your contributions under
+the same license.
+
+Scope (content paths):
+- src/writing/**
+- src/assets/profile.png
+
+Rights scope note:
+This license covers original expressed works in this repository (text and
+visual assets) and does not claim ownership over abstract ideas.
+
+Third-party materials exception:
+Third-party libraries, fonts, and any other third-party copyrighted materials
+included or referenced in this repository remain under their original
+licenses and copyright holders. Nothing in this file claims ownership of those
+third-party works.
+
+License details:
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Attribution example:
+"Underground Novel" (https://github.com/WriteByDodoes) - CC BY-NC-SA 4.0
