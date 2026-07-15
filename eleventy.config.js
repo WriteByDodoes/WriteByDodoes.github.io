@@ -3,9 +3,10 @@ const { DateTime } = require("luxon");
 const CATEGORY_LABELS = {
   novel: "소설",
   notes: "노트",
+  philosophy: "철학",
 };
 
-const CATEGORY_ORDER = ["novel", "notes"];
+const CATEGORY_ORDER = ["novel", "notes", "philosophy"];
 const ARCHIVE_PAGE_SIZE = 8;
 
 const slugify = (value) => {
