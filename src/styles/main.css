@@ -1218,7 +1218,7 @@ canvas {
 }
 
 .section-more-link:hover {
-  color: var(--color-primary-hover);
+  color: var(--color-primary-dark);
 }
 
 .section-more-row {
@@ -1562,10 +1562,10 @@ canvas {
   --color-text-muted: #8A8176;
   --color-border: #E5DBCF;
   --color-border-light: #EFE7DE;
-  --color-primary: #B98A6A;
-  --color-primary-dark: #9F7357;
-  --color-primary-light: #CDA88F;
-  --color-primary-bg: rgba(185, 138, 106, 0.10);
+  --color-primary: #A15A34;
+  --color-primary-dark: #7C4423;
+  --color-primary-light: #C99872;
+  --color-primary-bg: rgba(161, 90, 52, 0.10);
 }
 
 .theme-dodoes,
@@ -1862,8 +1862,8 @@ canvas {
   --post-code-text: #24292e;
   --post-code-border: var(--color-border-light);
   min-height: clamp(14rem, 28vh, 20rem);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
   letter-spacing: 0;
 }
 .theme-dodoes .writing-content.prose {
@@ -2002,8 +2002,8 @@ canvas {
 
 .theme-dodoes .writing-content {
   color: #241f1a;
-  font-size: 1.2rem;
-  line-height: 1.86;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 .theme-dodoes .writing-content.prose p {
@@ -2160,8 +2160,8 @@ canvas {
   }
 
   .theme-dodoes .writing-content {
-    font-size: 1.08rem;
-    line-height: 1.84;
+    font-size: 1rem;
+    line-height: 1.75;
   }
 .theme-dodoes .writing-content.prose h2 {
     margin-top: var(--space-10);
