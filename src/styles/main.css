@@ -2254,6 +2254,16 @@ canvas {
   line-height: var(--leading-tight);
 }
 
+.profile-email {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.profile-email a {
+  color: inherit;
+}
+
 .sidebar {
   align-self: start;
 }
