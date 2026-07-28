@@ -75,7 +75,7 @@ excerpt: "본문 일부 요약"
 
 - `novel`: 소설
 - `notes`: 노트
-- `philosophy`: 철학
+- `philosophy`: 논증
 
 작성 메모:
 
