@@ -3,7 +3,7 @@ const { DateTime } = require("luxon");
 const CATEGORY_LABELS = {
   novel: "소설",
   notes: "노트",
-  philosophy: "철학",
+  philosophy: "논증",
 };
 
 const CATEGORY_ORDER = ["novel", "notes", "philosophy"];
