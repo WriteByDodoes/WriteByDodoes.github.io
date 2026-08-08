@@ -66,6 +66,7 @@ title: "첫 번째 노트"
 date: 2026-04-04
 category: notes
 excerpt: "본문 일부 요약"
+published: true
 ---
 
 본문을 마크다운으로 작성합니다.
@@ -83,6 +84,9 @@ excerpt: "본문 일부 요약"
 - `excerpt`는 글 목록 요약, SEO description, Open Graph description, Twitter description에 사용됩니다.
 - `excerpt`가 없으면 본문 첫 문단을 160자 기준으로 잘라 meta description에 사용합니다.
 - 글 상세 헤더에는 `excerpt`를 표시하지 않습니다. `excerpt`는 부제목이 아니라 목록/검색/공유용 요약으로 관리합니다.
+- `published`는 선택 필드이며, 생략하거나 `true`로 설정하면 글을 게시합니다.
+- `published: false`로 설정하면 로컬과 배포 빌드 모두에서 해당 글의 HTML을 생성하지 않고 글 목록, 카테고리, 추천 글, 사이트맵에서도 제외합니다.
+- 공개 GitHub 저장소의 Markdown 원본은 `published: false`여도 계속 공개됩니다. 이 설정은 블로그 게시만 막습니다.
 - 카테고리 목록과 페이지네이션은 `eleventy.config.js`의 컬렉션, `postsByCategory` 필터, `buildPaginatedArchive`를 따릅니다.
 - 이미지가 필요하면 `src/assets/`에 추가하고 사이트 경로 기준으로 참조합니다.
 
