@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+const { execFileSync } = require("child_process");
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
@@ -42,4 +45,37 @@ test("writingPermalink suppresses unpublished output", () => {
     }),
     false
   );
+});
+
+test("Eleventy builds when a writing post is unpublished", () => {
+  const fixtureName = "2099-12-31-unpublished-publication-test.md";
+  const fixturePath = path.join("src", "writing", fixtureName);
+  const outputPath = path.join(
+    "_site",
+    "posts",
+    "2099-12-31-unpublished-publication-test",
+    "index.html"
+  );
+  const sentinel = "UNPUBLISHED_PUBLICATION_TEST_SENTINEL";
+
+  fs.writeFileSync(
+    fixturePath,
+    `---\nlayout: layouts/writing.njk\ntitle: Unpublished publication test\ndate: 2099-12-31\ncategory: notes\npublished: false\n---\n\n${sentinel}\n`
+  );
+
+  try {
+    assert.doesNotThrow(() => {
+      execFileSync("npm", ["run", "build"], {
+        encoding: "utf8",
+        stdio: "pipe",
+      });
+    });
+    assert.equal(fs.existsSync(outputPath), false);
+    assert.equal(
+      fs.readFileSync(path.join("_site", "index.html"), "utf8").includes(sentinel),
+      false
+    );
+  } finally {
+    fs.rmSync(fixturePath, { force: true });
+  }
 });
