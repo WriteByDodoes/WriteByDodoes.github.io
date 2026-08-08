@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "나는 나를 믿지 않는다."
 date: 2026-05-31
 category: notes
+published: false
 ---
 
 나는 나를 믿지 않는다. 나에 대한 자신감이 없다는 것이 아니다. 내가 쌓아온 것으로 검증된 것들에 대해서는 오히려 누가 뭐라 하든 그것에 대한 분명한 확신감이 있다. 그것은 마치 '그래도 지구는 돈다'와 같은 것이다.<br />

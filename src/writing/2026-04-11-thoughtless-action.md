@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "생각없이 하다."
 date: 2026-04-11
 category: notes
+published: false
 ---
 
 머리를 비워라.<br />

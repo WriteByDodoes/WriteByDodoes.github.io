@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "의도와 혼돈"
 date: 2026-04-15
 category: notes
+published: false
 excerpt: "아무리 큰 파도에 휩쓸리더라도 등대를 향해 나아간다."
 ---
 

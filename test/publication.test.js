@@ -78,6 +78,12 @@ test("isolated Eleventy build excludes unpublished writing everywhere", () => {
   const tempOutputPath = path.join(tempProjectPath, "_site");
   const fixtureName = "2099-12-31-unpublished-publication-test.md";
   const fixturePath = path.join(tempSourcePath, "writing", fixtureName);
+  const publicFixtureName = "2099-12-30-public-publication-test.md";
+  const publicFixturePath = path.join(
+    tempSourcePath,
+    "writing",
+    publicFixtureName
+  );
   const unpublishedOutputPath = path.join(
     tempOutputPath,
     "posts",
@@ -87,10 +93,11 @@ test("isolated Eleventy build excludes unpublished writing everywhere", () => {
   const publicOutputPath = path.join(
     tempOutputPath,
     "posts",
-    "2026-07-16-who-takes-responsibility-for-the-world",
+    "2099-12-30-public-publication-test",
     "index.html"
   );
   const sentinel = "UNPUBLISHED_PUBLICATION_TEST_SENTINEL";
+  const publicSentinel = "PUBLIC_PUBLICATION_TEST_SENTINEL";
 
   try {
     fs.cpSync(path.join(repositoryPath, "src"), tempSourcePath, {
@@ -99,6 +106,10 @@ test("isolated Eleventy build excludes unpublished writing everywhere", () => {
     fs.writeFileSync(
       fixturePath,
       `---\nlayout: layouts/writing.njk\ntitle: Unpublished publication test\ndate: 2099-12-31\ncategory: notes\npublished: false\n---\n\n${sentinel}\n`
+    );
+    fs.writeFileSync(
+      publicFixturePath,
+      `---\nlayout: layouts/writing.njk\ntitle: Public publication test\ndate: 2099-12-30\ncategory: notes\n---\n\n${publicSentinel}\n`
     );
 
     assert.doesNotThrow(() => {
@@ -126,9 +137,18 @@ test("isolated Eleventy build excludes unpublished writing everywhere", () => {
     );
     assert.equal(fs.existsSync(unpublishedOutputPath), false);
     assert.equal(fs.existsSync(publicOutputPath), true);
+    const sitemap = fs.readFileSync(
+      path.join(tempOutputPath, "sitemap.xml"),
+      "utf8"
+    );
+    assert.doesNotMatch(
+      sitemap,
+      /\/posts\/2099-12-31-unpublished-publication-test\//
+    );
+    assert.match(sitemap, /\/posts\/2099-12-30-public-publication-test\//);
     assert.match(
       fs.readFileSync(path.join(tempOutputPath, "posts", "index.html"), "utf8"),
-      /<a href="\/categories\/notes\/">노트<\/a>\s*<span class="count">\(8\)<\/span>/
+      /<a href="\/categories\/notes\/">노트<\/a>\s*<span class="count">\(1\)<\/span>/
     );
     assert.deepEqual(snapshotTree(realWritingPath), realWritingBefore);
     assert.deepEqual(snapshotTree(realOutputPath), realOutputBefore);

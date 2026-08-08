@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "목표는 지금을 살기 위한 도구"
 date: 2026-05-21
 category: notes
+published: false
 ---
 
 나는 과정을 선택하고 있지 않다.<br />
