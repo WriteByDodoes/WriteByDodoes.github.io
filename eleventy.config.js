@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const { filterPublished } = require("./src/_lib/publication");
 
 const CATEGORY_LABELS = {
   novel: "소설",
@@ -199,9 +200,9 @@ module.exports = function (eleventyConfig) {
   );
 
   const getWriting = (collectionApi) =>
-    collectionApi
-      .getFilteredByGlob("src/writing/**/*.{md,njk}")
-      .sort((a, b) => b.date - a.date);
+    filterPublished(
+      collectionApi.getFilteredByGlob("src/writing/**/*.{md,njk}")
+    ).sort((a, b) => b.date - a.date);
 
   const buildCategoryList = (items, order, labels, defaultKey) => {
     const grouped = {};
