@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "선택과 집중"
 date: 2026-04-13
 category: notes
+published: false
 excerpt: "의식의 흐름으로 적은 글"
 ---
 

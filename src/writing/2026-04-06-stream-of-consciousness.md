@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "의식의 흐름 (2026.04.06)"
 date: 2026-04-06
 category: notes
+published: false
 excerpt: "알아차리고 - 멈추고 - 통제하지 않는다."
 ---
 

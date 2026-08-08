@@ -3,6 +3,7 @@ layout: layouts/writing.njk
 title: "세상은 누가 책임지는가?"
 date: 2026-07-16
 category: philosophy
+published: false
 ---
 
 첫 번째 아이는 부모에게 버려지고 갱단 밑에서 자라 사회에 민폐를 끼치는 일원으로 자랐다. 또 두 번째 아이는 부유하고 똑똑한 부모님과 환경에서 풍족하게 태어나 사회에 큰 기여를 하고 존중받는 인물로 자랐다. 

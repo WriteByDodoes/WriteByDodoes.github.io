@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "eleventy --serve --watch",
     "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "test": "node --test",
     "clean": "rm -rf _site"
   },
   "devDependencies": {
